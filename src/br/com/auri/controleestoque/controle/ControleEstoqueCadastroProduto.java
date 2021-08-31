@@ -71,7 +71,6 @@ public class ControleEstoqueCadastroProduto {
 		Boolean b = false;
 		int opc = -1;
 		TelaControleEstoqueMenuCadastroProdutos.menuFiltroConsulta();
-		System.out.println();
 
 		do {
 			System.out.print("Digite uma opção: ");
@@ -129,8 +128,8 @@ public class ControleEstoqueCadastroProduto {
 				id = -1;
 			}
 		} while (id == -1);
-
 		Produto p = ce.consultarFindById(id);
+		System.out.println();
 		System.out.println("-----------------------------");
 		System.out.println("Nome       : " + p.getNome());
 		System.out.println("Preço      : " + p.getPreco());
@@ -146,6 +145,7 @@ public class ControleEstoqueCadastroProduto {
 			String nome = sc.nextLine();
 			Produto p = ce.consultarFindByNome(nome);
 			if (!Objects.isNull(p)) {
+				System.out.println();
 				System.out.println("-----------------------------");
 				System.out.println("Id         : " + p.getId());
 				System.out.println("Nome       : " + p.getNome());
@@ -166,6 +166,7 @@ public class ControleEstoqueCadastroProduto {
 		try {
 			ArrayList<Produto> produto = ce.consultarFindAll();
 			for (Produto p : produto) {
+				System.out.println();
 				System.out.println("-----------------------------");
 				System.out.println("Id         : " + p.getId());
 				System.out.println("Nome       : " + p.getNome());
@@ -202,7 +203,6 @@ public class ControleEstoqueCadastroProduto {
 				id = -1;
 			}
 		} while (id == -1);
-
 		TelaControleEstoqueMenuCadastroProdutos.exibirMensagem("TEM CERTEZA S/N?");
 		String r = sc.next();
 		if (r.equalsIgnoreCase("S")) {
@@ -228,7 +228,7 @@ public class ControleEstoqueCadastroProduto {
 				if ((id > 0 || id < 1000) && ce.verificarId(id)) {
 
 					Produto produto = ce.consultarFindById(id);
-
+					System.out.println();
 					System.out.println("-----------------------------");
 					System.out.println("1 - Nome       : " + produto.getNome());
 					System.out.println("2 - Preço      : " + produto.getPreco());
@@ -256,6 +256,7 @@ public class ControleEstoqueCadastroProduto {
 
 					switch (opc) {
 					case 1:
+						System.out.println();
 						System.out.print("Nome       : ");
 						String nomeAlterado;
 						nomeAlterado = sc.nextLine();
@@ -265,6 +266,7 @@ public class ControleEstoqueCadastroProduto {
 					case 2:
 						double precoAlterado = -1;
 						do {
+							System.out.println();
 							System.out.print("Preço      : ");
 							try {
 								precoAlterado = sc.nextDouble();
@@ -281,6 +283,7 @@ public class ControleEstoqueCadastroProduto {
 					case 3:
 						int quantidadeAlterada = -1;
 						do {
+							System.out.println();
 							System.out.print("Quantidade : ");
 							try {
 								quantidadeAlterada = sc.nextInt();
